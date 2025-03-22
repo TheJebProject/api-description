@@ -1,0 +1,7 @@
+openapi: 3.1.0
+info:
+  title: TheJebProject API Description
+  description: |
+    This API will be used to power TheJebProject frontends.
+  version: 0.0.1
+paths:
