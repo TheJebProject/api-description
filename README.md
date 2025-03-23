@@ -4,6 +4,12 @@ This repository holds the API description for TheJebProject that would be utiliz
 
 ## Useful Links
 
+### Docs
+
 - [OpenAPI Specification](https://swagger.io/specification/)
 - [OpenAPI Documenatation](https://learn.openapis.org/introduction.html)
 - [OpenAPI Map](https://openapi-map.apihandyman.io/?version=3.0)
+
+### Tools
+
+- [Swift OpenAPI Generator](https://github.com/apple/swift-openapi-generator)
