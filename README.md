@@ -7,7 +7,7 @@ This repository holds the API description for TheJebProject that would be utiliz
 ### Docs
 
 - [OpenAPI Specification](https://swagger.io/specification/)
-- [OpenAPI Documenatation](https://learn.openapis.org/introduction.html)
+- [OpenAPI Documentation](https://learn.openapis.org/introduction.html)
 - [OpenAPI Map](https://openapi-map.apihandyman.io/?version=3.0)
 
 ### Tools
