@@ -9,7 +9,6 @@ paths:
     post:
       tags:
         - Authentication
-        - Authorization
       operationId: login
       description: |
         Authenticates the User.
@@ -33,23 +32,11 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  accessToken:
-                    type: object
-                    properties:
-                      token:
-                        type: string
-                      expiresIn:
-                        type: integer
-                        format: int32
-                  refreshToken:
-                    type: string
+                $ref: "#/components/schemas/Tokens"
   /auth/register:
     post:
       tags:
         - Authentication
-        - Authorization
       operationId: register
       description: |
         Registers a new User.
@@ -80,15 +67,25 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  accessToken:
-                    type: object
-                    properties:
-                      token:
-                        type: string
-                      expiresIn:
-                        type: integer
-                        format: int32
-                  refreshToken:
-                    type: string
+                $ref: "#/components/schemas/Tokens"
+components:
+  schemas:
+    Tokens:
+      type: object
+      properties:
+        accessToken:
+          type: object
+          properties:
+            token:
+              type: string
+            expiresIn:
+              type: integer
+              format: int32
+        refreshToken:
+          type: object
+          properties:
+            token:
+              type: string
+            expiresIn:
+              type: integer
+              format: int32
