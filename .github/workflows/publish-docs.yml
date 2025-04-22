@@ -1,0 +1,29 @@
+name: Publish API Documentation
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18.x"
+
+      - name: Install Redoc CLI
+        run: npm install -g redoc-cli
+
+      - name: Generate Static Documentation
+        run: redoc-cli build openapi.api-description.yaml -o public/index.html
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: public
