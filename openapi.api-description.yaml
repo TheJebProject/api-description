@@ -1,7 +1,94 @@
-openapi: 3.1.0
+openapi: 3.0.3
 info:
   title: TheJebProject API Description
   description: |
-    This API will be used to power TheJebProject frontends.
-  version: 0.0.1
+    TheJebProject Backend API Description
+  version: 0.1.0
 paths:
+  /auth/login:
+    post:
+      tags:
+        - Authentication
+        - Authorization
+      operationId: login
+      description: |
+        Authenticates the User.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                password:
+                  type: string
+                  format: password
+              required:
+                - email
+                - password
+      responses:
+        "200":
+          description: Login Successful
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  accessToken:
+                    type: object
+                    properties:
+                      token:
+                        type: string
+                      expiresIn:
+                        type: integer
+                        format: int32
+                  refreshToken:
+                    type: string
+  /auth/register:
+    post:
+      tags:
+        - Authentication
+        - Authorization
+      operationId: register
+      description: |
+        Registers a new User.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                firstName:
+                  type: string
+                lastName:
+                  type: string
+                email:
+                  type: string
+                password:
+                  type: string
+                  format: password
+              required:
+                - firstName
+                - lastName
+                - email
+                - password
+      responses:
+        "200":
+          description: |
+            Registration Successful
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  accessToken:
+                    type: object
+                    properties:
+                      token:
+                        type: string
+                      expiresIn:
+                        type: integer
+                        format: int32
+                  refreshToken:
+                    type: string
