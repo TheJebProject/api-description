@@ -1,6 +1,7 @@
 # TheJebProject API Description
 
-This repository holds the API description for TheJebProject that would be utilized by its frontends.
+This repository holds the API description for TheJebProject that would be
+utilized by its frontends.
 
 ## Useful Links
 
